@@ -1,5 +1,11 @@
 <h1><%= @list.name %></h1>
 
+<p>BOOKMARKS</p>
+<%= @list.bookmarks %>
+
+<br>
+<br>
+
 <%= link_to "Create a Bookmark for this list", new_list_bookmark_path(@list) %>
 
 <%= link_to "Go back to All Lists", lists_path %>
