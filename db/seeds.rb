@@ -9,25 +9,27 @@
 require 'open-uri'
 require 'json'
 
-puts "Clearing database..."
+puts 'Clearing database...'
 Movie.destroy_all
 
-"Loading up database"
-url = "https://tmdb.lewagon.com/movie/top_rated"
+puts 'Loading up database'
+
+url = 'https://tmdb.lewagon.com/movie/top_rated'
 response = URI.open(url).read
 result = JSON.parse(response)
 
-array = result["results"]
-p array[0]["title"]
+array = result['results']
 
-array.each_with_index do|item, i|
+array.each_with_index do |item, _i|
   movies = Movie.new(
-    title: item["title"],
-    overview: item["overview"],
-    poster_url: item["poster_path"],
-    rating: item["vote_average"]
+    title: item['title'],
+    overview: item['overview'],
+    poster_url: item['poster_path'],
+    rating: item['vote_average']
   )
   movies.save!
 end
 
-puts "done"
+puts 'done'
+
+# poster_url: `https://image.tmdb.org/t/p/w200/#{item['poster_path']}`,
