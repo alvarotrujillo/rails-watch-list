@@ -1,24 +1,24 @@
-<h1><%= @list.name %></h1>
-
-<h3>Bookmarks</h3>
+<h2><%= @list.name %></h2>
+<h4>Films</h4>
 
 <% bookmarks = @list.bookmarks %>
+
 <% bookmarks.each do| bookmark | %>
 <% movie_id = bookmark.movie_id %>
 <% movie = Movie.find(movie_id) %>
+<div class="cards">
 <%= movie.title %>
-<img src="https://image.tmdb.org/t/p/w200<%= movie.poster_url %>" alt="Poster">
+  <img src="https://image.tmdb.org/t/p/w200<%= movie.poster_url %>" alt="Poster">
 <%= bookmark.comment %>
+</div>
 <% end %>
 
 <br>
+
+<%= link_to "Add a movie to this list", new_list_bookmark_path(@list) %>
+<%= link_to "Go back to all lists", lists_path %>
+
 <br>
-
-<%= link_to "Create a Bookmark for this list", new_list_bookmark_path(@list) %>
-<%= link_to "Go back to All Lists", lists_path %>
-
-<br>
-
 <%= link_to "Delete",
   list_path(@list),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
