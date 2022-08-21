@@ -4,7 +4,12 @@
  display: block;
 }
 
-ul li::marker{
+li {
+  font-size: 20px;
+  & a:hover { color: $bluey; }
+}
+
+ul li::marker {
   list-style: circle;
   color: $goldy;
 }
