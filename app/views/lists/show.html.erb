@@ -1,6 +1,6 @@
-<h2><%= @list.name %></h2>
+<h2 class="capitalize"><%= @list.name %></h2>
 <br>
-<h4>Films</h4>
+<h4 class="capitalize">Included titles:</h4>
 
 <% bookmarks = @list.bookmarks %>
 
@@ -8,11 +8,11 @@
   <% bookmarks.each do| bookmark | %>
   <% movie_id = bookmark.movie_id %>
   <% movie = Movie.find(movie_id) %>
-  <div class="card-product">
+  <div class="card-bookmark">
     <li>
       <img src="https://image.tmdb.org/t/p/w200<%= movie.poster_url %>" alt="Poster">
     </li>
-    <div class="card-product-infos">
+    <div class="card-bookmark-infos">
       <h2><%= movie.title %></h2>
       <br>
       <p><%= bookmark.comment %></p>

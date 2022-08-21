@@ -1,4 +1,4 @@
-<h1>Add the form for creating a list here</h1>
+<h1>Add movie to this list</h1>
 
 <% movies = Movie.all %>
 <% movie_titles = [] %>
@@ -7,9 +7,9 @@
 <% end %>
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.submit %>
+  <%= f.input :comment, label: 'Add your review or comments on the film' %>
+  <%= f.association :movie, label: 'Select the film' %>
+  <%= f.submit 'Add to list' %>
 <% end %>
-
-<%= link_to "Go back to All Lists", lists_path %>
+<br>
+<%= link_to "Back", lists_path %>

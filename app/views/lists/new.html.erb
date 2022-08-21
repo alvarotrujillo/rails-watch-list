@@ -1,8 +1,8 @@
-<h1>Add the form for creating a list here</h1>
+<h1 class="capitalize">create your movie list</h1>
 
 <%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, label: 'What will your list be called?' %>
   <%= f.submit %>
 <% end %>
-
-<%= link_to "Go back to All Lists", lists_path %>
+<br>
+<%= link_to "Back", lists_path %>

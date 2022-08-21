@@ -15,7 +15,7 @@ ul li::marker{
   grid-gap: 16px;
 }
 
-.card-product {
+.card-bookmark {
   overflow: hidden;
   height: 200px;
   background: $whitey;
@@ -24,20 +24,20 @@ ul li::marker{
   align-items: center;
 }
 
-.card-product img {
+.card-bookmark img {
   height: 100%;
   width: 200px;
   object-fit: cover;
 }
 
-.card-product h2 {
+.card-bookmark h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   color: $goldy;
 }
 
-.card-product p {
+.card-bookmark p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -46,7 +46,7 @@ ul li::marker{
   color: $goldy;
 }
 
-.card-product .card-product-infos {
+.card-bookmark .card-bookmark-infos {
   padding: 16px;
 }
 
