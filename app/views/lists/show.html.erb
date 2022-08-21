@@ -1,22 +1,30 @@
 <h2><%= @list.name %></h2>
+<br>
 <h4>Films</h4>
 
 <% bookmarks = @list.bookmarks %>
 
-<% bookmarks.each do| bookmark | %>
-<% movie_id = bookmark.movie_id %>
-<% movie = Movie.find(movie_id) %>
-<div class="cards">
-<%= movie.title %>
-  <img src="https://image.tmdb.org/t/p/w200<%= movie.poster_url %>" alt="Poster">
-<%= bookmark.comment %>
-</div>
-<% end %>
-
+<ul>
+  <% bookmarks.each do| bookmark | %>
+  <% movie_id = bookmark.movie_id %>
+  <% movie = Movie.find(movie_id) %>
+  <div class="card-product">
+    <li>
+      <img src="https://image.tmdb.org/t/p/w200<%= movie.poster_url %>" alt="Poster">
+    </li>
+    <div class="card-product-infos">
+      <h2><%= movie.title %></h2>
+      <br>
+      <p><%= bookmark.comment %></p>
+    </div>
+  </div>
+  <% end %>
+</ul>
 <br>
 
-<%= link_to "Add a movie to this list", new_list_bookmark_path(@list) %>
-<%= link_to "Go back to all lists", lists_path %>
+<%= link_to "+ movie to this list", new_list_bookmark_path(@list) %>
+<br>
+<%= link_to "All Lists", lists_path %>
 
 <br>
 <%= link_to "Delete",

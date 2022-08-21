@@ -1,0 +1,57 @@
+.card {
+ background: $whitey;
+ text-align: center;
+ display: block;
+}
+
+ul li::marker{
+  list-style: circle;
+  color: $goldy;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 200px;
+  background: $whitey;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: $goldy;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  color: $goldy;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+// // Watch-List color scheme
+// $bluey: #0e3a52; // Primary
+// $whitey: #fcf9f4; // Secondary
+// $goldy: #ce9e62; // Tertiary
+// $browny: #5d4f4d; // Quaternary

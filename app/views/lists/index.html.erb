@@ -1,9 +1,17 @@
-<h1>Alvaro's Watch Lists</h1>
+<h1>Film Watch Lists</h1>
 
-<ul>
+<ul class="card">
   <% @lists.each do | list | %>
     <li><%= link_to list.name, list_path(list) %></li>
   <% end %>
 </ul>
 
-<%= link_to "Create a new list", new_list_path %>
+<footer>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</footer>

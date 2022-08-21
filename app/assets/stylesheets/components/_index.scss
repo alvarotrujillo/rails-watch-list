@@ -3,3 +3,17 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+@import "card";
+
+body {
+  background: $bluey;
+  color: $whitey;
+}
+
+h1 {
+  margin-top: 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
