@@ -22,12 +22,10 @@
 </ul>
 <br>
 
-<%= link_to "+ movie to this list", new_list_bookmark_path(@list) %>
-<br>
-<%= link_to "All Lists", lists_path %>
-
-<br>
-<%= link_to "Delete",
-  list_path(@list),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+<footer class="footer">
+  <div class="non-index">
+    <%= link_to "Add movie to list", new_list_bookmark_path(@list) %> |
+    <%= link_to "All lists", lists_path %> |
+    <%= link_to "Delete list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "You will delete the whole list, are you sure?"} %>
+  </div>
+</footer>
